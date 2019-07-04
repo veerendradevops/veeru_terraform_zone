@@ -43,7 +43,7 @@ provisioner "remote-exec"{
         "curl -fsSL https://get.docker.com -o get-docker.sh",
         "sudo sh get-docker.sh",
         "sudo usermod -aG docker ubuntu",
-        "docker login -u veerendratholeti@gmail.com -p Veerendr@444"
+        "docker login -u veerendratholeti@gmail.com -p "
     ]
 }
   
