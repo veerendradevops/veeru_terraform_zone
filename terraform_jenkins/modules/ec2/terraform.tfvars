@@ -1,5 +1,4 @@
 #GLOBAL PARAMETERS
-region = "us-east-1"
 availability_zones = "us-east-1a"
 
 #EC2 PARAMETERS

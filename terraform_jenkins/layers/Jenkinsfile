@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    parameters {
+    choice(name: 'env', choices: 'DEV\nTEST', description: 'Select the environment')
+    choice(name: 'action', choices: 'init\nplan\napply\ndestroy\nplan-destroy', description: 'Select Action')
+    }
+    stages {
+        stage('terraform') {
+            environment {
+                LAYER = "${params.env}"
+                INFRA_ACTION = "${params.action}"
+            }
+            steps {
+                if (params.env == 'DEV' && params.action == apply)
+                  bat '../../scripts/apply.bat'
+            }
+        }
+    }
+}
