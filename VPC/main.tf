@@ -1,3 +1,5 @@
+
+### Command: terraform init -backend-config='dynamodb_table=tfdynamo-state-lock' ###
 /*
 module s3_backend {
   source                      = "youngfeldt/backend-s3/aws"
