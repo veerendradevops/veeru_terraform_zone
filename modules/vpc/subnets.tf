@@ -13,9 +13,9 @@ resource "aws_subnet" "vkdmzsubnets" {
 
 resource "aws_subnet" "vkwebsubnets" {
   vpc_id     = "${aws_vpc.TerraformVPC1.id}"
-  cidr_block = "${cidrsubnet(var.cidr_block, 8, count.index)}"
+  cidr_block = "${cidrsubnet(var.cidr_block, 8, count.index + length(var.availability_zones))}"
   count      = "${length(var.availability_zones)}"
-  availability_zone = "${element(var.availability_zones, count.index)}"
+  availability_zone = "${element(var.availability_zones, count.index )}"
 
   tags = {
     "Name" = "vknatsubnet - ${element(var.availability_zones, count.index)}"
