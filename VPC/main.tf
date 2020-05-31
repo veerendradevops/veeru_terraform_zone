@@ -1,3 +1,4 @@
+/*
 module s3_backend {
   source                      = "youngfeldt/backend-s3/aws"
   version                     = ">= 1.0.0"
@@ -7,6 +8,7 @@ module s3_backend {
   create_s3_bucket            = true
   s3_key                      = "terraform.tfstate"
 }
+*/
 
 module "vpc" {
     source ="../modules/vpc"
