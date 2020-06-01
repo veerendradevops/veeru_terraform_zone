@@ -6,7 +6,7 @@ vpc_id = "vpc-90e6ebea"
 ingress{
     from_port = 80
     to_port = 80
-    protocol = "tdp"
+    protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 } 
 ingress{
