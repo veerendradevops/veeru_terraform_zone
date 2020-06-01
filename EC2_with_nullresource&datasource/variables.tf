@@ -9,7 +9,7 @@ default = "veeru7799.pem"
 }
 
 locals {
-  insta_id        = "module.ec2.aws_instace.id"
+  insta_id        = "module.ec2.aws_instance.id"
 }
 
 variable "instance_id" {
