@@ -1,3 +1,4 @@
+/*
 #global parameters like accesskey, secretket, region and availabilityzone etc
 
 variable "region" {
@@ -25,3 +26,5 @@ variable "instance_type" {
 description = "instancetype to launch"
 default = "t2.micro"
 }
+
+*/
