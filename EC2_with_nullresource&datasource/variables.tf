@@ -13,7 +13,7 @@ locals {
 }
 
 variable "instance_id" {
-    default = local.inst_id
+    default = local.insta_id
 }
 
 
