@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: httpd
+      package:
+        name: httpd
+        state: present
+        update_cache: yes
+    - name: httpd start service
+      service:
+        name: httpd
+        state: started
