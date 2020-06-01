@@ -9,6 +9,7 @@ region = "us-east-1"
 
 data "aws_instance" "data_apache" {
   instance_id = "i-00a4f3af7a5d682ea"
+  region = "us-east-1"
 
   filter {
     name   = "tag:Name"
