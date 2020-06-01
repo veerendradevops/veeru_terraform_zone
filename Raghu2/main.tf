@@ -47,7 +47,7 @@ connection {
     provisioner "remote-exec" {
         inline = [
             "sudo yum update -y",
-            "myip="$(curl icanhazip.com)"",
+           # "myip="$(curl icanhazip.com)"",
             "echo 'my public ip is: $myip' > /var/www/index.html"
         ]
     }
