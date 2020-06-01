@@ -15,3 +15,17 @@ data "aws_instance" "data_apache" {
     values = ["apache"]
   }
 }
+
+resource "null_resource" "null_apache" {
+    connection {
+        user = "ec2-user"
+        host = "${data.aws_instance.data_apache.public_ip}"
+        private_key = "${file(var.privatekeypath)}"
+    }
+    provisioner "remote-exec" {
+        inline = [
+            "sudo yum update",
+            "sudo yum install httpd -y"
+        ]
+    }
+}
