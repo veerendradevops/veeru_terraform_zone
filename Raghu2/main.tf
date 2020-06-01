@@ -47,14 +47,7 @@ connection {
     provisioner "remote-exec" {
         inline = [
             "sudo yum update -y",
-            "sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
-            "sudo yum install epel-release-latest-7.noarch.rpm -y",
-            "sudo yum update -y",
-            "sudo  yum install git python python-devel python-pip ansible -y",
-            "sudo chmod 777 /etc/ansible/hosts",
-            "sudo echo '127.0.0.1 ansible_connection=local' > /etc/ansible/hosts",
-            "sudo cp apache.yml ~/",
-            "ansible-playbook apache.yml"
+            "sudo cp ./apache.yml /home/ec2-user"
         ]
     }
 }
