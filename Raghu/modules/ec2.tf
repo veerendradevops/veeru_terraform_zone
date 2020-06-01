@@ -15,7 +15,8 @@ connection {
     provisioner "remote-exec" {
         inline = [
             "sudo yum update",
-            "sudo yum httpd -y"
+            "sudo yum httpd -y",
+            "sudo service httpd start"
         ]
     }
 }
