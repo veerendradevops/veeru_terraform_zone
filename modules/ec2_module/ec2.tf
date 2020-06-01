@@ -9,3 +9,9 @@ resource "aws_instance" "terraformmachine" {
     Name      = "${var.environment_tag}"
 }
 }
+
+output "instance_ip_addr" {
+  value       = aws_instance.terraformmachine.id
+  description = "The private IP address of the main server instance."
+}
+
