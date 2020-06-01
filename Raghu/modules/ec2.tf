@@ -8,21 +8,9 @@ resource "aws_instance" "terraformmachine" {
     tags = {
     Name      = "${var.environment_tag}"
     }
-}
-
-data "aws_instance" "data_apache" {
-  instance_id = "${aws_instance.terraformmachine.id}"
-
-  filter {
-    name   = "tag:Name"
-    values = ["apache"]
-  }
-}
-
-resource "null_resource" "null_apache" {
-    connection {
+connection {
         user = "ec2-user"
-        host = "${data.aws_instance.data_apache.public_ip}"
+        host = "${aws_instance.terraformmachine.public_ip}"
         private_key = "${file(var.privatekeypath)}"
     }
     provisioner "remote-exec" {
