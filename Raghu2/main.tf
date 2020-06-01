@@ -56,7 +56,7 @@ connection {
 				"sudo wget https://raw.githubusercontent.com/veerendradevops/veeru_ansible_zone/master/apache2_amazon_linux.yml",
 				"ansible-playbook apache2_amazon_linux.yml",
 				"sudo chmod 777 /var/www/html/",
-				"sudo echo 'hai this is veerendra' > /var/index/html/index.html"
+				"sudo echo 'hai this is veerendra' > /var/www/html/index.html"
 			]
     }
 }
