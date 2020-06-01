@@ -8,7 +8,7 @@ region = "us-east-1"
 }
 
 data "aws_instance" "data_apache" {
-  instance_id = "i-00a4f3af7a5d682ea"
+  instance_id = "module.ec2.aws_instace.id"
 
   filter {
     name   = "tag:Name"
