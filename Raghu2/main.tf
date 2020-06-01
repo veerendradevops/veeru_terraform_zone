@@ -54,7 +54,7 @@ connection {
             "sudo chmod 777 /etc/ansible/hosts",
             "sudo echo '127.0.0.1 ansible_connection=local' > /etc/ansible/hosts",
             "sudo wget https://raw.githubusercontent.com/veerendradevops/veeru_ansible_zone/master/apache2_amazon_linux.yml",
-            "ansible-playbook apache.yml"
+            "ansible-playbook apache2_amazon_linux.yml"
         ]
     }
 }
