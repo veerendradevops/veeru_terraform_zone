@@ -1,6 +1,6 @@
-resource "aws_security_group" "tf_sg_all" {
+resource "aws_security_group" "tf_sg" {
 
-name = "tf_sg_apache"
+name = "tf_sg"
 description = "Allows traffic on port 80"
 vpc_id = "vpc-90e6ebea"
 ingress{
