@@ -53,6 +53,7 @@ connection {
             "sudo  yum install git python python-devel python-pip ansible -y",
             "sudo chmod 777 /etc/ansible/hosts",
             "sudo echo '127.0.0.1 ansible_connection=local' > /etc/ansible/hosts",
+            "sudo cp apache.yml ~/apache.yml"
             "ansible-playbook apache.yml"
         ]
     }
