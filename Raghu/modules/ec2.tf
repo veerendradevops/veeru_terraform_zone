@@ -12,7 +12,7 @@ connection {
         host = "${aws_instance.terraformmachine.public_ip}"
         private_key = "${file(var.privatekeypath)}"
     }
-    provisioner "remote-exec" {
+    provisioner "local-exec" {
         inline = [
             "sudo yum update -y",
             "sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
