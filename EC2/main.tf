@@ -25,7 +25,8 @@ resource "null_resource" "null_apache" {
     provisioner "remote-exec" {
         inline = [
             "sudo yum update",
-            "sudo yum install httpd -y"
+            "sudo yum install httpd -y",
+            "sudo service https status"
         ]
     }
 }
