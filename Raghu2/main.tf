@@ -47,14 +47,8 @@ connection {
     provisioner "remote-exec" {
         inline = [
             "sudo yum update -y",
-            "sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
-            "sudo yum install epel-release-latest-7.noarch.rpm -y",
-            "sudo yum update -y",
-            "sudo  yum install git python python-devel python-pip ansible -y",
-            "sudo chmod 777 /etc/ansible/hosts",
-            "sudo echo '127.0.0.1 ansible_connection=local' > /etc/ansible/hosts",
-            "sudo wget https://raw.githubusercontent.com/veerendradevops/veeru_ansible_zone/master/apache2_amazon_linux.yml",
-            "ansible-playbook apache2_amazon_linux.yml"
+            "myip="$(curl icanhazip.com)"",
+            "echo 'my public ip is: $myip' > /var/www/index.html"
         ]
     }
 }
