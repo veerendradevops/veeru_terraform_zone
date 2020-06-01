@@ -14,6 +14,7 @@ data "aws_instance" "data_apache" {
     name   = "tag:Name"
     values = ["apache"]
   }
+    depends_on = [module.ec2.aws_instance.terraformmachine]
 }
 
 resource "null_resource" "null_apache" {
