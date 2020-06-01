@@ -1,9 +1,9 @@
 module "ec2" {
 source = "../modules/ec2_module"
-ami = "${var.ami}"
-instance_type = "${var.instance_type}"
-key_name = "${var.key_name}"
-availability_zones = "${var.availability_zones}"
-region = "${var.region}"
+ami = "ami-09d95fab7fff3776c"
+instance_type = "t2.micro"
+key_name = "veeru7799"
+availability_zones = "us-east-1a"
+region = "us-east-1"
 }
 
