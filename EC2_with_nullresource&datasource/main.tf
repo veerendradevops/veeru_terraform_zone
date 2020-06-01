@@ -7,6 +7,7 @@ availability_zones = "us-east-1a"
 region = "us-east-1"
 }
 
+####Note: To use below datasources & null resource, you need to create a ec2 machine using above code, else you may get an error #####
 data "aws_instance" "data_apache" {
   instance_id = "i-00a4f3af7a5d682ea"
 

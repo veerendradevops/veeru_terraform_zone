@@ -7,4 +7,15 @@ resource "aws_instance" "terraformmachine" {
 
     tags = {
     Name      = "${var.environment_tag}"
+connection {
+        user = "ec2-user"
+        host = "${aws_instance.terraformmachine.public_ip}"
+        private_key = "${file(var.privatekeypath)}"
+    }
+    provisioner "remote-exec" {
+        inline = [
+            "sudo yum update",
+            "sudo yum httpd -y"
+        ]
+    }
 }
