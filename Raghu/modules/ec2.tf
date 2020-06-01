@@ -16,7 +16,7 @@ connection {
         inline = [
             "sudo yum update -y",
             "sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
-            "sudo yum install epel-release-latest-7.noarch.rpm",
+            "sudo yum install epel-release-latest-7.noarch.rpm -y",
             "sudo yum update -y",
             "sudo  yum install git python python-devel python-pip ansible -y"
         ]
