@@ -6,10 +6,10 @@ key_name = "veeru7799"
 availability_zones = "us-east-1a"
 region = "us-east-1"
 }
-
 ####Note: To use below datasources & null resource, you need to create a ec2 machine using above code, else you may get an error #####
+
 data "aws_instance" "data_apache" {
-  instance_id = "i-00a4f3af7a5d682ea"
+  instance_id = "i-039e64f3223a255e8"
 
   filter {
     name   = "tag:Name"
@@ -25,9 +25,11 @@ resource "null_resource" "null_apache" {
     }
     provisioner "remote-exec" {
         inline = [
-            "sudo yum update",
-            "sudo yum install httpd -y",
-            "sudo service https status"
+            "sudo yum update -y",
+            "sudo wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+            "sudo yum install epel-release-latest-7.noarch.rpm -y",
+            "sudo yum update -y",
+            "sudo  yum install git python python-devel python-pip ansible -y"
         ]
     }
 }

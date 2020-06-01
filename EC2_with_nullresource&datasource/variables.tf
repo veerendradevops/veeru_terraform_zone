@@ -8,6 +8,16 @@ description = "private pem file"
 default = "veeru7799.pem"
 }
 
+/*******
+locals {
+  insta_id        = "${module.ec2.aws_instance.id}"
+}
+
+variable "instance_id" {
+    default = "local.insta_id"
+}
+***************/
+
 /*
 #global parameters like accesskey, secretket, region and availabilityzone etc
 
