@@ -2,7 +2,7 @@ resource "aws_vpc" "mainnet" {
     cidr_block = "192.168.0.0/16"
 
     tags = {
-        Name = "mainnet"
+        Name = "mainnet-${terraform.workspace}"
     }
   
 }
