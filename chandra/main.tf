@@ -1,8 +1,8 @@
 resource "aws_instance" "first_ec2" {
-    ami = ""
-    instance_type = ""
-    key_name = ""
-    vpc_security_group_ids = ""
+    ami = "ami-09d95fab7fff3776c"
+    instance_type = "t2.micro"
+    key_name = "veeru7799"
+    vpc_security_group_ids = "sg-0120b8a1ce9608bbc"
     associate_public_ip_address = true
     tags    =   {
         Name = "chandraEC2"
